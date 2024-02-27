@@ -49,13 +49,13 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className="h-fit my-20 px-5 py-10 flex flex-col items-center">
+    <section id="projects" className="h-fit my-20 px-5 py-10 flex flex-col items-center">
        <div className="text-4xl font-bold">Projects</div>
       <div className="w-28 h-1 border-b-4 border-violet-700"></div>
       <div className="flex flex-wrap justify-center gap-20 mt-16 max-w-screen ">
       {projects.map((project) => (
         <div key={project.name}>
-          <Card className="w-[400px] hover:border-violet-500 hover:ease-in-out hover:scale-105 transition-all duration-300 cursor-pointer">
+          <Card className="w-[300px] md:w-[400px] hover:border-violet-500 hover:ease-in-out hover:scale-105 transition-all duration-300 cursor-pointer z-1 ">
             <CardHeader>
               <Image src={project.imageSrc} width={400} height={400} className="cursor-pointer transition"  />
             </CardHeader>
@@ -85,7 +85,7 @@ const Projects = () => {
         </div>
       ))}
     </div>
-    </div>
+    </section>
   );
 };
 

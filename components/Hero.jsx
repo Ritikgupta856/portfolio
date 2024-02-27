@@ -34,7 +34,7 @@ const Hero = () => {
 
       <div className="rounded-full border-black border-2 flex-shrink-0">
         <Image
-          src="/home.jpg"
+          src="/profile.jpg"
           alt="home"
           width={400}
           height={400}
