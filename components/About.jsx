@@ -42,20 +42,22 @@ const About = () => {
           />
 
           <div className="w-full md:w-1/2 lg:w-4/5">
-            <p className="text-gray-600 dark:text-white text-lg text-justify tracking-tighter sm:tracking-tight  mb-8">
-              Proficient in full-stack web development, I excel in both frontend
-              and backend technologies. With expertise in HTML, CSS, JavaScript,
-              React.js, and Next.js, I craft responsive and visually appealing
-              user interfaces. On the backend, I specialize in frameworks like
-              Node.js and Express.js, along with database management systems
-              like MongoDB, MySQL, and Firebase. My comprehensive understanding
-              of the web development ecosystem enables me to build robust and
-              scalable web applications.
+            <p className="text-gray-800 dark:text-white text-lg text-justify font-medium tracking-tighter sm:tracking-tight  mb-8">
+              As a skilled full-stack web developer, I excel in creating
+              visually appealing and functional web applications. With expertise
+              in front-end technologies like HTML, CSS, JavaScript, React.js,
+              and Next.js, I build responsive and user-friendly interfaces. On
+              the back-end, I leverage frameworks such as Node.js and
+              Express.js, along with databases like MongoDB , MySQL and Firebase
+              to develop robust and scalable solutions. What really gets me
+              going is writing clean, maintainable code that stands the test of
+              time. I stay up-to-date with the latest web dev trends and
+              technologies, always ready to level up my skills.
             </p>
 
             <div className="flex justify-center sm:justify-start">
               <Link href="/resume/ritik_resume.pdf" download>
-                <Button className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold transition-colors duration-300">
+                <Button size="lg" className="bg-indigo-600  hover:bg-indigo-700 text-white font-bold transition-colors duration-300">
                   Download Resume
                 </Button>
               </Link>
