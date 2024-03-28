@@ -11,12 +11,13 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { motion } from "framer-motion";
 
 const links = [
   { path: "/", name: "Home" },
   { path: "#about", name: "About" },
-  { path: "#skills", name: "Skills" },
   { path: "#education", name: "Education" },
+  { path: "#skills", name: "Skills" },
   { path: "#projects", name: "Projects" },
   { path: "#contact", name: "Contact" },
 ];
@@ -26,7 +27,12 @@ const Navbar = () => {
 
   const pathname = usePathname();
   return (
-    <nav className="md:flex gap-10 flex-row items-center font-semibold hidden">
+    <motion.div
+      initial={{ x: 50, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.8, delay: 0.1 }}
+      className="md:flex gap-10 flex-row items-center font-semibold hidden"
+    >
       {links.map((link, index) => {
         const isActive = pathname === link.path;
         return (
@@ -57,7 +63,7 @@ const Navbar = () => {
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
-    </nav>
+    </motion.div>
   );
 };
 

@@ -1,73 +1,52 @@
+'use client'
+import { skills } from "@/lib/data";
 import Image from "next/image";
-
-const skills = [
-  {
-    name: "HTML5",
-    icon: "/skills/html.png",
-  },
-  {
-    name: "CSS3",
-    icon: "/skills/css.png",
-  },
-
-  {
-    name: "Javascript",
-    icon: "/skills/javascript.png",
-  },
-  {
-    name: "React",
-    icon: "/skills/react.png",
-  },
-  {
-    name: "Next",
-    icon: "/skills/nextjs.png",
-  },
-  {
-    name: "Node",
-    icon: "/skills/nodejs.png",
-  },
-  {
-    name: "Mongodb",
-    icon: "/skills/mongodb.png",
-  },
-  {
-    name: "Python",
-    icon: "/skills/python.png",
-  },
-  {
-    name: "TypeScript",
-    icon: "/skills/typescript.png",
-  },
-  {
-    name: "C++",
-    icon: "/skills/c++.png",
-  },
-];
+import { motion } from "framer-motion";
 
 const Skills = () => {
-  return (
-    <section id="skills" className="h-fit flex flex-col items-center ">
-      <div className="text-4xl font-bold">Skills</div>
-      <div className="w-16 h-1 border-b-4 border-violet-700"></div>
+  const fadeInVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeInOut",
+        staggerChildren: 0.2,
+      },
+    },
+  };
 
-      <div className="flex flex-wrap justify-center gap-20 mt-16 max-w-screen ">
-        {skills.map((skill) => (
-          <div
-            key={skill.name}
-            className=" flex flex-col items-center hover:ease-in-out hover:scale-105 transition-all duration-200 cursor-pointer delay-75 shrink-0"
-          >
-            <Image
-              src={skill.icon}
-              alt={skill.name}
-              width={100}
-              height={100}
-              className="w-[120px] aspect-square"
-            />
-            <div className="text-black font-medium dark:text-white">
-              {skill.name}
+  return (
+    <section id="skills" className="min-h-[400px] py-16 bg-gray-100 dark:bg-gray-900">
+      <div className="text-3xl text-center font-bold mb-10">Skills</div>
+      <div className="mx-auto py-10 container">
+        <motion.div
+          variants={fadeInVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-8"
+        >
+          {skills.map((skill) => (
+            <div
+              key={skill.name}
+              variants={fadeInVariants}
+              className="flex flex-col items-center hover:ease-in-out hover:scale-105 transition-all duration-200 cursor-pointer delay-75 shrink-0"
+            >
+              <Image
+                src={skill.icon}
+                alt={skill.name}
+                width={100}
+                height={100}
+                className="w-32 aspect-square"
+              />
+              <div className="text-black font-medium dark:text-white">
+                {skill.name}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </motion.div>
       </div>
     </section>
   );
