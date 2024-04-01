@@ -49,13 +49,13 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="min-h-screen">
+    <section id="contact" className="min-h-[400px] py-10">
       <motion.div
         variants={fadeInVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="flex flex-col items-center py-10 "
+        className="flex flex-col items-center"
       >
         <div className="text-4xl font-bold">Get in Touch</div>
         <div className="text-lg font-medium">I'd love to hear from you!</div>

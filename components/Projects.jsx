@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import {
   Card,
@@ -29,26 +29,25 @@ const Projects = () => {
   };
   return (
     <section id="projects" className="min-h-screen py-16 md:py-20">
-      
       <div className="text-3xl font-bold text-center mb-20">Projects</div>
 
       <div className="container flex justify-center px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
-          {projects.map((project) => (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16">
+          {projects.map((project, index) => (
             <motion.div
-              key={project.name}
+              key={index}
               variants={fadeInVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
             >
-              <Card className="w-[350px] md:w-[500px] hover:border-violet-500 transition cursor-pointer z-1 ">
+              <Card className="w-full md:w-[500px] hover:border-violet-500 transition cursor-pointer z-1 ">
                 <CardHeader>
                   <Image
                     src={project.imageSrc}
-                    width={400}
-                    height={400}
-                    className="cursor-pointer transition"
+                    width={450}
+                    height={450}
+                    className="cursor-pointer transition  aspect-[6/3]"
                   />
                 </CardHeader>
                 <CardContent className="mt-5">
@@ -57,8 +56,10 @@ const Projects = () => {
                     {project.description}
                   </CardDescription>
                   <div className="flex flex-wrap gap-2 mt-5">
-                    {project.skills.map((skill) => (
+                    {project.skills.map((skill,index) => (
+                      <div key={index}>
                       <Button size="sm">{skill}</Button>
+                      </div>
                     ))}
                   </div>
                 </CardContent>
@@ -66,9 +67,12 @@ const Projects = () => {
                   <Button variant="outline">
                     <Link href={project.githubLink}>Github</Link>
                   </Button>
-                  <Button variant="outline">
-                    <Link href={project.liveLink}>Link</Link>
-                  </Button>
+
+                  {project.liveLink && (
+                    <Button variant="outline">
+                      <Link href={project.liveLink}>Link</Link>
+                    </Button>
+                  )}
                 </CardFooter>
               </Card>
             </motion.div>

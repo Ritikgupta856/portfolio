@@ -21,7 +21,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="min-h-screen py-16 bg-gray-100 dark:bg-gray-900"
+      className="min-h-[400px] py-16 bg-gray-100 dark:bg-gray-900"
     >
       <motion.div
         variants={fadeInVariants}
@@ -36,28 +36,31 @@ const About = () => {
           <Image
             src="/about.jpg"
             alt="home"
-            width={450}
-            height={450}
-            className="rounded-lg shadow-lg"
+            width={480}
+            height={480}
+            className="rounded-lg shadow-lg max-w-full"
           />
 
           <div className="w-full md:w-1/2 lg:w-4/5">
-            <p className="text-gray-800 dark:text-white text-lg text-justify font-medium tracking-tighter sm:tracking-tight  mb-8">
-              As a skilled full-stack web developer, I excel in creating
-              visually appealing and functional web applications. With expertise
-              in front-end technologies like HTML, CSS, JavaScript, React.js,
-              and Next.js, I build responsive and user-friendly interfaces. On
-              the back-end, I leverage frameworks such as Node.js and
-              Express.js, along with databases like MongoDB , MySQL and Firebase
-              to develop robust and scalable solutions. What really gets me
-              going is writing clean, maintainable code that stands the test of
-              time. I stay up-to-date with the latest web dev trends and
-              technologies, always ready to level up my skills.
+            <p className="text-gray-800 dark:text-gray-300 text-lg text-justify font-medium tracking-tighter sm:tracking-tight mb-8">
+              Hello there! I'm a full-stack web developer, which means I build
+              complete websites and web applications from start to finish. On
+              the front-end side, I use languages like HTML, CSS, JavaScript,
+              React.js, and Next.js to create the parts of the website that
+              users can see and interact with. I make sure these user interfaces
+              look great and are easy to use. But my skills don't stop there!
+              I also work on the back-end, which is the behind-the-scenes part
+              of a website or application. Using tools like Node.js, Express.js,
+              and databases like MongoDB, MySQL, and Firebase, I develop the
+              systems that make everything work smoothly and efficiently.
             </p>
 
-            <div className="flex justify-center sm:justify-start">
+            <div className="flex justify-center md:justify-start">
               <Link href="/resume/ritik_resume.pdf" download>
-                <Button size="lg" className="bg-indigo-600  hover:bg-indigo-700 text-white font-bold transition-colors duration-300">
+                <Button
+                  size="lg"
+                  className="bg-indigo-600  hover:bg-indigo-700 text-white font-bold transition-colors duration-300"
+                >
                   Download Resume
                 </Button>
               </Link>

@@ -34,7 +34,7 @@ const Hero = () => {
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex justify-center  mt-5 font-medium  md:mt-10 md:text-lg"
+          className="flex justify-center mt-5 font-medium md:mt-10 sm:text-sm md:text-base lg:text-lg"
         >
           I am a dedicated Full Stack Software Developer with a strong
           background in building web applications. I specialize in JavaScript,
@@ -46,7 +46,7 @@ const Hero = () => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 1 }}
-          className="flex flex-row py-10 gap-10 cursor-pointer"
+          className="flex flex-row py-10 gap-5 sm:gap-10 cursor-pointer"
         >
           <Link href="https://www.instagram.com/ritik.gupta18" target="_blank">
             <div className="bg-black w-10 h-10 text-white hover:scale-110 hover:text-black dark:hover:text-violet-500 transition delay-100 hover:bg-white border-2 border-black dark:bg-white dark:text-black rounded-full flex items-center justify-center">
@@ -76,9 +76,9 @@ const Hero = () => {
         <Image
           src="/profile.jpg"
           alt="home"
-          width={400}
-          height={400}
-          className="rounded-full w-60 h-60 md:w-full md:h-full"
+          width={384}
+          height={384}
+          className="rounded-full w-60 h-60 md:w-96 md:h-full"
         />
       </motion.div>
     </section>
