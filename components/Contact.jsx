@@ -28,6 +28,8 @@ const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
+
+
     emailjs
       .sendForm(
         process.env.NEXT_PUBLIC_SERVICE_ID,
@@ -73,6 +75,7 @@ const Contact = () => {
               name="user_name"
               className="mt-2"
               placeholder="Your Name"
+              required
             />
           </div>
 
@@ -84,6 +87,7 @@ const Contact = () => {
               name="user_email"
               className="mt-2"
               placeholder="Your Email ID"
+              required
             />
           </div>
 
@@ -94,6 +98,7 @@ const Contact = () => {
               name="message"
               id="msg"
               className="mt-2"
+              required
             />
           </div>
 
