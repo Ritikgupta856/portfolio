@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <section className="flex min-h-[90vh] container justify-between items-center flex-col-reverse py-3 px-6 md:py-6 md:px-12 md:flex-row w-full">
+    <section className="flex min-h-[90vh] justify-between items-center flex-col-reverse py-3 px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-40 md:py-6 md:flex-row w-full">
       <motion.div
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}

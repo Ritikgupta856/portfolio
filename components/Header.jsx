@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const Header = () => {
   return (
-    <header className= "sticky top-0 bg-white dark:bg-inherit w-full py-2 px-6 md:py-4 md:px-12 flex items-center justify-between border-b z-10">
+    <header className="sticky top-0 bg-white dark:bg-inherit w-full py-2 md:py-4 px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-40 flex items-center justify-between border-b z-10">
        <motion.div
       initial={{ x: -50, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}

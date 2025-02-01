@@ -21,14 +21,14 @@ const About = () => {
   return (
     <section
       id="about"
-      className="min-h-[400px] py-16 bg-gray-100 dark:bg-gray-900"
+      className="min-h-[400px] py-16 bg-gray-100 dark:bg-gray-900 px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-40"
     >
       <motion.div
         variants={fadeInVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="mx-auto container px-10"
+        className="mx-auto container"
       >
         <div className="text-3xl text-center mb-10 font-bold ">About Me</div>
 
