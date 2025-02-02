@@ -19,7 +19,7 @@ const links = [
   { path: "#education", name: "Education" },
   { path: "#skills", name: "Skills" },
   { path: "#projects", name: "Projects" },
-  { path: "#contact", name: "Contact" },
+
 ];
 
 const Navbar = () => {

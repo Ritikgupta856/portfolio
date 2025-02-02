@@ -19,7 +19,6 @@ const links = [
   { path: "#about", name: "About" },
   { path: "#Skills", name: "Skills" },
   { path: "#projects", name: "Projects" },
-  { path: "#contact", name: "Contact" },
 ];
 
 const MobileNav = () => {
