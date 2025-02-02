@@ -17,8 +17,11 @@ import {
 const links = [
   { path: "/", name: "Home" },
   { path: "#about", name: "About" },
+  { path: "#experience", name: "Experience" },
+  { path: "#education", name: "Education" },
   { path: "#Skills", name: "Skills" },
   { path: "#projects", name: "Projects" },
+
 ];
 
 const MobileNav = () => {

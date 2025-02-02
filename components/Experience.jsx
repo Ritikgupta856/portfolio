@@ -4,7 +4,7 @@ import { experienceData } from '@/lib/data';
 
 const Experience = () => {
     return (
-        <section className="py-8 px-4 sm:py-16 sm:px-6 lg:px-12 xl:px-20 2xl:px-40 bg-gradient-to-b from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800">
+        <section id="experience" className="py-8 px-4 sm:py-16 sm:px-6 lg:px-12 xl:px-20 2xl:px-40 bg-gradient-to-b from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800">
             <div className="container mx-auto">
                 <h2 className="text-2xl sm:text-3xl font-bold text-center mb-6 sm:mb-10 text-gray-900 dark:text-gray-100">
                     Experience

@@ -16,6 +16,7 @@ import { motion } from "framer-motion";
 const links = [
   { path: "/", name: "Home" },
   { path: "#about", name: "About" },
+  { path: "#experience", name: "Experience" },
   { path: "#education", name: "Education" },
   { path: "#skills", name: "Skills" },
   { path: "#projects", name: "Projects" },
