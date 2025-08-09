@@ -1,88 +1,62 @@
 "use client";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Github, Instagram, Linkedin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 const Hero = () => {
+
   return (
-    <section className="flex min-h-[90vh] justify-between items-center flex-col-reverse py-3 px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-40 md:py-6 md:flex-row w-full">
-      <motion.div
-        initial={{ x: -100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="flex flex-col py-4 px-4 items-center text-center md:text-left md:items-start md:mt-10"
-      >
-        <motion.h1
-          initial={{ y: -50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-4xl md:text-6xl mt-5 font-bold"
-        >
-          Hi, I'm Ritik Gupta
-        </motion.h1>
-        <motion.p
-          initial={{ y: -20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-base mt-6 md:mt-4 dark:text-violet-500 uppercase font-bold tracking-wider md:text-2xl"
-        >
-          Full Stack Web Developer
-        </motion.p>
+    <div className="flex flex-col md:flex-row justify-between items-start md:space-x-14 w-full mb-10">
+      <div className="flex md:w-3/4 flex-col mt-6">
+        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-2 text-black dark:text-white">
+         Ritik Gupta
+        </h1>
 
-        <motion.p
-          initial={{ y: -20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex justify-center mt-5 font-medium md:mt-10 sm:text-sm md:text-base lg:text-lg"
-        >
-          I am a dedicated Full Stack Software Developer with a strong
-          background in building web applications. I specialize in JavaScript,
-          React.js, Node.js, and Next.js, alongside a range of other
-          cutting-edge technologies and frameworks.
-        </motion.p>
+        <div className="relative leading-7 items-center flex-wrap text-zinc-700 dark:text-zinc-400 mb-5">
+         I'm a full-stack developer that loves building products and web apps that can impact millions of lives
 
-        <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1 }}
-          className="flex flex-row py-10 gap-5 sm:gap-10 cursor-pointer"
+
+        </div>
+        <p className="text-zinc-600 dark:text-zinc-500">
+         I'm a associate software engineer with 1.4 years of experience building scalable web apps that are performance optimized and good looking.
+        </p>
+      </div>
+      
+
+      <div className="relative flex-shrink-1 p-4 md:p-4 md:order-last order-first">
+        <a
+          href="https://www.linkedin.com/in/ritikgupta856"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block z-[5] overflow-hidden rounded shadow-xl ring-1 ring-slate-900/5 relative bg-white h-20 w-20"
         >
-          <Link href="https://www.instagram.com/ritik.gupta18" target="_blank">
-            <div className="bg-black w-10 h-10 text-white hover:scale-110 hover:text-black dark:hover:text-violet-500 transition delay-100 hover:bg-white border-2 border-black dark:bg-white dark:text-black rounded-full flex items-center justify-center">
-              <Instagram />
+          <Image
+            alt="Manu Arora"
+            fill
+            className="bg-gray-100 object-cover"
+            src="/avatar.jpg"
+          />
+        </a>
+        <div className="z-0">
+          <div className="absolute left-0 -right-12 top-0 h-px bg-slate-900/[0.1] dark:bg-zinc-300/[0.1] [mask-image:linear-gradient(to_right,transparent,white_4rem,white_calc(100%-4rem),transparent)]"></div>
+          <div className="absolute -top-8 bottom-0 left-12 w-px bg-slate-900/[0.1] dark:bg-zinc-300/[0.1] [mask-image:linear-gradient(to_top,transparent,white_4rem,white_calc(100%-4rem),transparent)]"></div>
+          <div className="absolute left-0 -right-12 bottom-14 h-px bg-slate-900/[0.1] dark:bg-zinc-300/[0.1] [mask-image:linear-gradient(to_right,transparent,white_4rem,white_calc(100%-4rem),transparent)]"></div>
+          <div className="absolute right-0 -top-2 -bottom-8 w-px bg-slate-900/[0.1] dark:bg-zinc-300/[0.1] [mask-image:linear-gradient(to_top,transparent,white_4rem,white_calc(100%-4rem),transparent)]"></div>
+          <div className="absolute bottom-full right-10 -mb-px flex h-8 items-end overflow-hidden">
+            <div className="flex -mb-px h-[2px] w-40 -scale-x-100">
+              <div className="w-full flex-none blur-sm [background-image:linear-gradient(90deg,rgba(56,189,248,0)_0%,#0EA5E9_32.29%,rgba(236,72,153,0.3)_67.19%,rgba(236,72,153,0)_100%)]"></div>
+              <div className="-ml-[100%] w-full flex-none blur-[1px] [background-image:linear-gradient(90deg,rgba(56,189,248,0)_0%,#0EA5E9_32.29%,rgba(236,72,153,0.3)_67.19%,rgba(236,72,153,0)_100%)]"></div>
             </div>
-          </Link>
+          </div>
+        </div>
+      </div>
+    </div>
 
-          <Link href="https://www.linkedin.com/in/ritikgupta856" target="_blank">
-            <div className="bg-black w-10 h-10 text-white  hover:scale-110 hover:text-black dark:hover:text-violet-500  transition delay-100 hover:bg-white border-2 border-black dark:bg-white dark:text-black rounded-full flex items-center justify-center">
-              <Linkedin />
-            </div>
-          </Link>
-          <Link href="https://www.github.com/ritikgupta856" target="_blank">
-            <div className="bg-black w-10 h-10 text-white hover:scale-110  hover:text-black dark:hover:text-violet-500  transition delay-100 hover:bg-white border-2 border-black dark:bg-white dark:text-black rounded-full flex items-center justify-center">
-              <Github />
-            </div>
-          </Link>
-        </motion.div>
-      </motion.div>
-
-      <motion.div
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        className="rounded-full border-black border-2 flex-shrink-0"
-      >
-        <Image
-          src="/profile.jpg"
-          alt="home"
-          width={384}
-          height={384}
-          className="rounded-full w-60 h-60 md:w-96 md:h-full"
-        />
-      </motion.div>
-    </section>
   );
+
 };
+
 
 export default Hero;

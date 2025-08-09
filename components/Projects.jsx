@@ -1,18 +1,8 @@
 "use client";
 import React from "react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import Image from "next/image";
-import { Button } from "./ui/button";
-import Link from "next/link";
 import { projects } from "@/lib/data";
-import { motion } from "framer-motion";
+import ProjectCard from "./ProjectCard";
+import { LucideWorkflow } from "lucide-react";
 
 const Projects = () => {
   const fadeInVariants = {
@@ -27,57 +17,30 @@ const Projects = () => {
       },
     },
   };
+
   return (
-    <section id="projects" className="min-h-screen py-16 md:py-20">
-      <div className="text-3xl font-bold text-center mb-20">Projects</div>
-
-      <div className="container flex justify-center px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16">
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              variants={fadeInVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-            >
-              <Card className="w-full md:w-[500px] hover:border-violet-500 transition cursor-pointer z-1 ">
-                <CardHeader>
-                  <Image
-                    src={project.imageSrc}
-                    width={450}
-                    height={450}
-                    className="cursor-pointer transition  aspect-[6/3]"
-                  />
-                </CardHeader>
-                <CardContent className="mt-5">
-                  <CardTitle className="text-xl">{project.title}</CardTitle>
-                  <CardDescription className="mt-5">
-                    {project.description}
-                  </CardDescription>
-                  <div className="flex flex-wrap gap-2 mt-5">
-                    {project.skills.map((skill,index) => (
-                      <div key={index}>
-                      <Button size="sm">{skill}</Button>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-                <CardFooter className="flex gap-5 mt-5">
-                  <Button variant="outline">
-                    <Link href={project.githubLink}>Github</Link>
-                  </Button>
-
-                  {project.liveLink && (
-                    <Button variant="outline">
-                      <Link href={project.liveLink}>Link</Link>
-                    </Button>
-                  )}
-                </CardFooter>
-              </Card>
-            </motion.div>
-          ))}
+    <section id="projects" className="py-16">
+   <div className="mb-8 flex items-center gap-3">
+        <div className="rounded-full bg-emerald-500/15 p-2 ring-1 ring-emerald-500/20">
+          <LucideWorkflow className="h-5 w-5 text-emerald-600" />
         </div>
+        <div>
+          <h2 className="text-2xl font-bold tracking-tight">Projects</h2>
+          <p className="text-muted-foreground">Showcasing my work and collaborations</p>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {projects.map((project, index) => (
+          <ProjectCard
+            key={index}
+            title={project.title}
+            description={project.description}
+            href={project.href}
+            icon={project.icon}
+            tags={project.tags}
+          />
+        ))}
       </div>
     </section>
   );

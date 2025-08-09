@@ -1,71 +1,76 @@
-import React from 'react';
-import { 
-  FaBriefcase, 
-  FaCalendarAlt, 
-  FaMapMarkerAlt, 
-  FaCode, 
-  FaDownload 
-} from 'react-icons/fa';
-import Link from 'next/link';
-import { experienceData } from '@/lib/data';
+import { Briefcase } from "lucide-react";
+import React from "react";
 
 const Experience = () => {
+  const experienceData = {
+    company: "STARTWITH BASICX PVT. LTD.",
+    role: "Associate Software Engineer",
+    duration: "May 2024 - Present",
+    location: "Jaipur, India",
+    achievements: [
+      "Developed a new feature that improves the shopping experience",
+      "Implemented a recommendation algorithm to suggest products",
+      "Enhanced the checkout process making it more intuitive and user-friendly",
+      "Built a feature for tracking packages in real-time",
+    ],
+    techStack:
+      "React.js, TypeScript, Node.js, MSSQL, MariaDB, Shadcn UI, Tailwind CSS, AWS EC2/Amplify",
+  };
+
   return (
-    <section 
-      id="experience" 
-      className="py-8 px-4 sm:py-16 sm:px-6 lg:px-12 xl:px-20 2xl:px-40 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800"
-    >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-center text-3xl font-bold mb-10">
-         Experience
-        </h2>
-        
-        <div className="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-300 border border-gray-200 dark:border-gray-700 relative transform hover:-translate-y-2">
-          <div className="flex flex-col sm:flex-row items-center justify-between mb-6">
-            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-violet-500 flex items-center mb-4 sm:mb-0">
-              <FaBriefcase className="mr-3 text-violet-600 dark:text-violet-400" /> 
-              {experienceData.company}
-            </h3>
-            
-            <Link 
-              href="/resume/ritik_resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center bg-gradient-to-r from-violet-600 to-violet-700 text-white px-6 py-2 rounded-full hover:from-violet-700 hover:to-violet-800 transition-all duration-300 active:scale-95 shadow-lg hover:shadow-xl"
-            >
-              <FaDownload className="mr-2" /> 
-              <span className="text-sm font-medium">Download Resume</span>
-            </Link>
-          </div>
-          
-          <div className="mt-4 text-gray-600 dark:text-gray-400 flex items-center">
-            <FaCalendarAlt className="mr-3 text-violet-600 dark:text-violet-400" /> 
-            <span>{experienceData.duration}</span>
-          </div>
-          
-          <div className="mt-3 text-gray-600 dark:text-gray-400 flex items-center">
-            <FaMapMarkerAlt className="mr-3 text-violet-600 dark:text-violet-400" /> 
-            <span>{experienceData.role}, {experienceData.location}</span>
-          </div>
-          
-          <ul className="list-disc list-inside mt-6 space-y-3 text-gray-800 dark:text-gray-300">
-            {experienceData.achievements.map((achievement, index) => (
-              <li key={index} className="leading-relaxed">
-                {achievement}
-              </li>
-            ))}
-          </ul>
-          
-          <div className="mt-6 text-gray-800 dark:text-gray-300 flex items-center">
-            <FaCode className="mr-3 text-violet-600 dark:text-violet-400" />
-            <strong>Tech Stack:</strong> 
-            <span className="ml-2">
-              {experienceData.techStack}
-            </span>
+    <div className="py-16">
+      <div className="mb-8 flex items-center gap-3">
+        <div className="rounded-full bg-violet-500/15 p-2 ring-1 ring-violet-500/20">
+          <Briefcase className="h-5 w-5 text-violet-600" />
+        </div>
+        <div>
+          <h2 className="text-2xl font-bold tracking-tight">Work Experience</h2>
+          <p className="text-muted-foreground">I love building products that impact millions</p>
+        </div>
+      </div>
+
+      {/* Experience Card */}
+      <div className="rounded-2xl shadow-sm border-gray-100 overflow-hidden">
+        {/* Timeline and Company */}
+        <div className="">
+          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
+            <div className="mb-4 lg:mb-0">
+              <p className="text-lg font-medium mb-2">
+                {experienceData.duration}
+              </p>
+            </div>
+
+            <div className="flex-1 lg:ml-12">
+              <div className="flex items-center mb-3">
+                <h2 className="text-2xl font-bold text-violet-500 mr-4">
+                  {experienceData.company}
+                </h2>
+              </div>
+
+              <h3 className="text-lg font-semibold mb-2">
+                {experienceData.role}
+              </h3>
+
+              <p className="text-md mb-6">
+                {experienceData.description}
+              </p>
+
+              {/* Achievements */}
+              <div className="space-y-4">
+                {experienceData.achievements.map((achievement, index) => (
+                  <div key={index} className="flex items-start">
+                    <div className="w-2 h-2 rounded-full mt-2 mr-4 bg-violet-500 flex-shrink-0"></div>
+                    <p className="leading-relaxed">
+                      {achievement}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
