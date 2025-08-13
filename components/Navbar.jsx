@@ -5,11 +5,10 @@ import { motion } from "framer-motion";
 
 const links = [
   { path: "/", name: "Home" },
+  { path: "#projects", name: "Projects" },
   { path: "#experience", name: "Experience" },
   { path: "#education", name: "Education" },
   { path: "#skills", name: "Skills" },
-  { path: "#projects", name: "Projects" },
-
 ];
 
 const Navbar = () => {
@@ -33,7 +32,6 @@ const Navbar = () => {
           </Link>
         );
       })}
-
     </motion.div>
   );
 };

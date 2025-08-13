@@ -8,8 +8,11 @@ import { Toaster } from "react-hot-toast";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Ritik Gupta | Portfolio",
-  description: "Personal portfolio website of Ritik Gupta",
+  title: "Ritik Gupta | Full Stack Developer",
+  description: "Personal portfolio website showcasing my skills and projects.",
+   icons: {
+    icon: "/favicon.svg", 
+  },
 };
 
 export default function RootLayout({ children }) {

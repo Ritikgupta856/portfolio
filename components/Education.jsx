@@ -5,6 +5,7 @@ import { GraduationCap, School } from "lucide-react"
 
 import { Badge } from "@/components/ui/badge"
 import { Card } from "./ui/card"
+import Heading from "./Heading"
 
 const schools= [
   {
@@ -19,16 +20,8 @@ const schools= [
 
 export default function Education() {
   return (
-    <section id="education" className="py-16">
-      <div className="mb-8 flex items-center gap-3">
-        <div className="rounded-full bg-emerald-500/15 p-2 ring-1 ring-emerald-500/20">
-          <GraduationCap className="h-5 w-5 text-emerald-600" />
-        </div>
-        <div>
-          <h2 className="text-2xl font-bold tracking-tight">Education</h2>
-          <p className="text-muted-foreground">Academic journey and notable coursework</p>
-        </div>
-      </div>
+    <section id="education" className="py-8">
+      <Heading heading="Education" />
 
       <ol className="relative space-y-6 before:absolute before:left-6 before:top-0 before:h-full before:w-px before:bg-border/80 md:space-y-8">
         {schools.map((s, i) => (
@@ -42,12 +35,12 @@ export default function Education() {
           >
             <span
               aria-hidden
-              className="absolute left-4 top-2 inline-flex h-8 w-8 items-center justify-center rounded-full bg-background ring-2 ring-emerald-500/40"
+              className="absolute left-4 top-2 inline-flex h-8 w-8 items-center justify-center rounded-full bg-background ring-2 ring-violet-500/40"
             >
               {s.icon === "grad" ? (
-                <GraduationCap className="h-4 w-4 text-emerald-600" />
+                <GraduationCap className="h-4 w-4 text-violet-500" />
               ) : (
-                <School className="h-4 w-4 text-emerald-600" />
+                <School className="h-4 w-4 text-violet-500" />
               )}
             </span>
 

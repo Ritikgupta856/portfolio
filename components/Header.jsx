@@ -1,7 +1,5 @@
 "use client";
-import Image from "next/image";
 import Navbar from "./Navbar";
-import MobileNav from "./MobileNav";
 import { motion, useScroll } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import {
@@ -24,12 +22,7 @@ const Header = () => {
         style={{ scaleX: scrollYProgress, transformOrigin: "0%" }}
       />
   
-      <header className="sticky-nav flex justify-between items-center max-w-4xl py-8 mt-0 mb-0 md:mt-4 md:mb-10 mx-auto bg-white dark:bg-inherit bg-opacity-60">
-        <motion.div
-          initial={{ x: -50, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-        >
+      <header className="sticky-nav flex justify-end sm:justify-between items-center max-w-4xl py-8 mt-0 mb-0 px-4 md:mt-4 md:mb-10 mx-auto bg-white dark:bg-inherit bg-opacity-60">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="outline" size="icon">
@@ -47,10 +40,7 @@ const Header = () => {
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-        </motion.div>
-        
         <Navbar />
-        <MobileNav />
       </header>
     </>
   );
